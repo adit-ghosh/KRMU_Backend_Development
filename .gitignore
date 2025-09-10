@@ -1,3 +1,24 @@
-node_modules
-.gitignore
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Dependency lock files
 package-lock.json
+yarn.lock
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Build

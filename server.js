@@ -1,4 +1,13 @@
 const express = require('express');
+const mongoose = require('mongoose');
+
+mongoose.connect(
+    'mongodb+srv://back:end@cluster0.7xuxs8r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+).then(() => {
+    console.log('Connected to MongoDB');
+}).catch((err) => {
+    console.error('Error connecting to MongoDB', err);
+});
 
 const app = express();
 
