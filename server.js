@@ -1,18 +1,28 @@
-// import express
+const express = require('express');
 
-const express = require("express");
-
-// app
 const app = express();
 
-//listen -> server run (server creation)
+app.get("/hello",(req,res)=>{
+    return res.send("<h1>Hello World</h1>");
+})
 
-// home route
+app.get("/users",(req,res)=>{
+    return res.json({users:[
+    {
+        id:1,
+        name: "a"
+    },
+    {
+        id:2,
+        name: "b"
+    },
+    {
+        id:3,
+        name: "c"
+    }
+        ]});
+})
 
-app.get("/", (req, res) => {
-  return res.send("<h1>Hello World</h1>");
-});
-
-app.listen(5000, () => {
-  console.log("Server is running on port 5000");
+app.listen(5678,()=>{ 
+    console.log('Server is running on port 5678');
 });
