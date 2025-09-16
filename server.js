@@ -1,15 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const userRouter = require('./routes/user.routes');
+const dotenv = require('dotenv');
 
-mongoose.connect(
-    'mongodb+srv://back:end@cluster0.7xuxs8r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
-).then(() => {
+dotenv.config();
+
+mongoose.connect(process.env.MONGO).then(() => {
     console.log('Connected to MongoDB');
 }).catch((err) => {
     console.error('Error connecting to MongoDB', err);
 });
 
 const app = express();
+
+app.use(express.json());
+app.use('/api', userRouter);
 
 app.get("/hello",(req,res)=>{
     return res.send("<h1>Hello World</h1>");
