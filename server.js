@@ -16,7 +16,7 @@ const app = express();
 app.use(express.json());
 app.use('/api', userRouter);
 
-app.get("/hello",(req,res)=>{
+app.get("/",(req,res)=>{
     return res.send("<h1>Hello World</h1>");
 })
 
