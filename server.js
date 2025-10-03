@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); // ODM
 const userRouter = require('./routes/user.routes');
 const dotenv = require('dotenv');
 

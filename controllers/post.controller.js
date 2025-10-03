@@ -1,10 +1,10 @@
-const post = require("../models/post.model");
+const Post = require("../models/post.model");
 
 //logic to insert post
 
 const insertPost = async (req, res) => {
     try {
-        await Post.insertMany(5[
+       const insertedPosts = await Post.insertMany(5[
             {
                 title: "Learn javascript",
                 description: "Learning js",
@@ -16,7 +16,7 @@ const insertPost = async (req, res) => {
                 category: "education",
             }
         ])
-        return res.status(200).json({ message: "data inserted successfully", post: insertPost });  
+        return res.status(200).json({ message: "data inserted successfully", post: insertedPosts });  
     } catch (err) {
         console.log(err);
     }
